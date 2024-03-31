@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Main {
 
-    public static <List> void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder builder = new StringBuilder();
         int count = Integer.parseInt(reader.readLine());
@@ -20,7 +20,7 @@ public class Main {
             }
         }
 
-        Integer max = bookMap.values().stream()
+        int max = bookMap.values().stream()
                 .mapToInt(number -> number)
                 .max()
                 .orElseThrow(NoSuchElementException::new);
@@ -29,13 +29,13 @@ public class Main {
 
         for (Map.Entry<String, Integer> entry : bookMap.entrySet()) {
             Integer value = entry.getValue();
-            if(max.equals(value)){
+            if(max == value){
                 bestSeller.add(entry.getKey());
             }
         }
 
         Collections.sort(bestSeller);
-        
+
 
         System.out.println(bestSeller.get(0));
     }
