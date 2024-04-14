@@ -11,7 +11,7 @@ public class Main {
         StringTokenizer tokenizer;
 
         int count = Integer.parseInt(reader.readLine());
-        List<Position> positions = new LinkedList<>();
+        List<Position> positions = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
             tokenizer = new StringTokenizer(reader.readLine()," ");
